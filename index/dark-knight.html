@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dark Knight - KinoWorld</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Kino<span>World</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Bosh sahifa</a></li>
+          <li><a href="movies.html">Kinolar</a></li>
+          <li><a href="tv-shows.html">TV Seriyalar</a></li>
+          <li><a href="genres.html">Janrlar</a></li>
+          <li><a href="about.html">Biz haqimizda</a></li>
+          <li><a href="contact.html">Aloqa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="movie-detail">
+    <div class="container">
+      <div class="movie-info">
+        <div class="movie-poster">
+          <img src="img/the dark night2.jpg" alt="The Dark Knight">
+        </div>
+        <div class="movie-meta">
+          <h1>The Dark Knight</h1>
+          <div class="movie-details">
+            <p><strong>Yil:</strong> 2008</p>
+            <p><strong>Janr:</strong> Ekshen, Triller</p>
+            <p><strong>Davomiyligi:</strong> 152 daqiqa</p>
+            <p><strong>Rejissyor:</strong> Christopher Nolan</p>
+            <p><strong>Aktyorlar:</strong> Christian Bale, Heath Ledger, Aaron Eckhart</p>
+            <p><strong>Reyting:</strong> ⭐ 9.0/10 (IMDb)</p>
+          </div>
+          <div class="movie-description">
+            <h3>Hikoya</h3>
+            <p>Betmen Gangni o'ldirgach, Gota shahri biroz tinch topadi. Lekin yangi qorong'u qahramon - Joker paydo bo'ladi. U shaharning qalbini qorong'ulikka botirish maqsadida betmen bilan to'qnashadi.</p>
+            <p>Film yaxshilik va yomonlik, qonun va anarxiya, insoniyat va qorong'ulik o'rtasidagi kurashni namoyish etadi. Joker - oddiy jinoyatchi emas, balki insoniyatning qorong'uligini namoyon qiluvchi personaj.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-player">
+        <h2>Ko'rish</h2>
+        
+        <!-- Sifatni tanlash -->
+        <div class="quality-selector">
+          <label for="quality">Video sifati:</label>
+          <select id="quality" onchange="changeQuality(this.value)">
+            <option value="480p">480p (Tez yuklanadi)</option>
+            <option value="720p" selected>720p (HD - Tavsiya etiladi)</option>
+            <option value="1080p">1080p (Full HD)</option>
+          </select>
+        </div>
+        
+        <div class="video-container">
+          <video id="movieVideo" width="100%" height="400" controls>
+            <source id="videoSource" src="videos/Betmen_Qora_Ritsar_2008_HD_Daxshat.Net.mp4" type="video/mp4">
+            Brauzeringiz <a href="videos/Betmen_Qora_Ritsar_2008_HD_Daxshat.Net.mp4">videoni yuklab oling</a>
+          </video>
+        </div>
+      </div>
+
+      <div class="related-movies">
+        <h3>O'xshash Kinolar</h3>
+        <div class="movie-grid">
+          <div class="movie-card">
+            <img src="img/interstellar-feat.jpeg" alt="Interstellar">
+            <h3>Interstellar</h3>
+            <p>2014 | Ilmiy fantastika</p>
+          </div>
+          <div class="movie-card">
+            <img src="img/inception.jpg" alt="Inception">
+            <h3>Inception</h3>
+            <p>2010 | Triller</p>
+          </div>
+          <div class="movie-card">
+            <img src="img/joker.jpg" alt="Joker">
+            <h3>Joker</h3>
+            <p>2019 | Drama</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KinoWorld. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+</body>
+</html>

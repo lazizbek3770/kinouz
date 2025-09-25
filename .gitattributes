@@ -1,0 +1,5 @@
+Intelstellar*.mp4 filter=lfs diff=lfs merge=lfs -text
+*Intelstellar.mp4 filter=lfs diff=lfs merge=lfs -text
+*Muqaddima.mp4 filter=lfs diff=lfs merge=lfs -text
+*Betmen_Qora_Ritsar_2008_HD_Daxshat.Net.mp4 filter=lfs diff=lfs merge=lfs -text
+*freekino.net_freekino.net_tebranish_480.mp4 filter=lfs diff=lfs merge=lfs -text

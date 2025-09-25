@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinolar - KinoWorld</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Kino<span>World</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Bosh sahifa</a></li>
+          <li><a href="movies.html" class="active">Kinolar</a></li>
+          <li><a href="tv-shows.html">TV Seriyalar</a></li>
+          <li><a href="genres.html">Janrlar</a></li>
+          <li><a href="about.html">Biz haqimizda</a></li>
+          <li><a href="contact.html">Aloqa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h2>Barcha Kinolar</h2>
+    </div>
+  </section>
+
+  <section class="movies-list">
+    <div class="container">
+      <!-- Qidiruv qismi -->
+      <div class="search-section">
+        <input type="text" id="searchInput" placeholder="Kinolarni qidirish..." onkeyup="searchAndFilter()">
+      </div>
+      
+      <!-- Filtr tugmalari -->
+      <div class="filter-section">
+        <button class="filter-btn active" onclick="setFilter('all')" data-filter="all">Barchasi</button>
+        <button class="filter-btn" onclick="setFilter('action')" data-filter="action">Ekshen</button>
+        <button class="filter-btn" onclick="setFilter('drama')" data-filter="drama">Drama</button>
+        <button class="filter-btn" onclick="setFilter('thriller')" data-filter="thriller">Triller</button>
+        <button class="filter-btn" onclick="setFilter('sport')" data-filter="sport">Sport</button>
+        <button class="filter-btn" onclick="setFilter('comedy')" data-filter="comedy">Komediya</button>
+        <button class="filter-btn" onclick="setFilter('scifi')" data-filter="scifi">Ilmiy fantastika</button>
+      </div>
+
+      <div class="movie-grid" id="movieGrid">
+        <div class="movie-card" data-genre="action">
+          <img src="img/avengers.webp" alt="Avengers: Endgame">
+          <h3>Avengers: Endgame</h3>
+          <p>2019 | Ekshen</p>
+        </div>
+        <div class="movie-card" data-genre="drama">
+          <img src="img/parasite.jpg" alt="Parasite">
+          <h3>Parasite</h3>
+          <p>2019 | Drama</p>
+        </div>
+        <div class="movie-card" data-genre="thriller">
+          <img src="img/joker.jpg" alt="Joker">
+          <h3>Joker</h3>
+          <p>2019 | Triller</p>
+        </div>
+        <div class="movie-card" data-genre="sport">
+          <img src="img/Ford-Vs-Ferrari.webp" alt="Ford v Ferrari">
+          <h3>Ford v Ferrari</h3>
+          <p>2019 | Sport</p>
+        </div>
+        
+        <!-- Qo'shimcha kinolar -->
+        <div class="movie-card" data-genre="action">
+          <img src="img/the dark night.avif" alt="The Dark Knight">
+          <h3>The Dark Knight</h3>
+          <p>2008 | Ekshen</p>
+        </div>
+        <div class="movie-card" data-genre="scifi">
+          <img src="img/interstellar-feat.jpeg" alt="Interstellar">
+          <h3>Interstellar</h3>
+          <p>2014 | Ilmiy fantastika</p>
+        </div>
+        <div class="movie-card" data-genre="thriller">
+          <img src="img/inception.jpg" alt="Inception">
+          <h3>Inception</h3>
+          <p>2010 | Triller</p>
+        </div>
+        <div class="movie-card" data-genre="scifi">
+          <img src="img/gravity.jpg" alt="Gravity">
+          <h3>Gravity</h3>
+          <p>2013 | Ilmiy fantastika</p>
+        </div>
+        <div class="movie-card" data-genre="comedy">
+          <img src="img/hangover.jpg" alt="The Hangover">
+          <h3>The Hangover</h3>
+          <p>2009 | Komediya</p>
+        </div>
+        <div class="movie-card" data-genre="drama">
+          <img src="img/godfather.png" alt="The Godfather">
+          <h3>The Godfather</h3>
+          <p>1972 | Drama</p>
+        </div>
+        <div class="movie-card" data-genre="action">
+          <img src="img/matrix.jpg" alt="The Matrix">
+          <h3>The Matrix</h3>
+          <p>1999 | Ekshen</p>
+        </div>
+        <div class="movie-card" data-genre="comedy">
+          <img src="img/superbad.png" alt="Superbad">
+          <h3>Superbad</h3>
+          <p>2007 | Komediya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KinoWorld. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Filtrni o'rnatish
+    function setFilter(filter) {
+      currentFilter = filter;
+      
+      // Aktiv tugmani yangilash
+      const buttons = document.getElementsByClassName('filter-btn');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+      event.target.classList.add('active');
+      
+      applyFilters();
+    }
+
+    // Qidiruv
+    function searchMovies() {
+      const input = document.getElementById('searchInput');
+      currentSearch = input.value.toLowerCase();
+      applyFilters();
+    }
+
+    // Qidiruv va filtrlashni birlashtirish
+    function searchAndFilter() {
+      searchMovies();
+    }
+
+    // Filtrlarni qo'llash
+    function applyFilters() {
+      const cards = document.getElementsByClassName('movie-card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const genre = card.getAttribute('data-genre');
+        const title = card.getElementsByTagName('h3')[0].textContent.toLowerCase();
+        
+        // Qidiruv va filtr shartlarini tekshirish
+        const matchesSearch = currentSearch === '' || title.includes(currentSearch);
+        const matchesFilter = currentFilter === 'all' || genre === currentFilter;
+        
+        if (matchesSearch && matchesFilter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    }
+
+    // Sahifa yuklanganda
+    document.addEventListener('DOMContentLoaded', function() {
+      // Qidiruv inputiga event listener qo'shish
+      document.getElementById('searchInput').addEventListener('keyup', searchAndFilter);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interstellar - KinoWorld</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Kino<span>World</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Bosh sahifa</a></li>
+          <li><a href="movies.html">Kinolar</a></li>
+          <li><a href="tv-shows.html">TV Seriyalar</a></li>
+          <li><a href="genres.html">Janrlar</a></li>
+          <li><a href="about.html">Biz haqimizda</a></li>
+          <li><a href="contact.html">Aloqa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="movie-detail">
+    <div class="container">
+      <div class="movie-info">
+        <div class="movie-poster">
+          <img src="img/interstellar2.jpg" alt="Interstellar">
+        </div>
+        <div class="movie-meta">
+          <h1>Interstellar</h1>
+          <div class="movie-details">
+            <p><strong>Yil:</strong> 2014</p>
+            <p><strong>Janr:</strong> Ilmiy fantastika, Drama</p>
+            <p><strong>Davomiyligi:</strong> 169 daqiqa</p>
+            <p><strong>Rejissyor:</strong> Christopher Nolan</p>
+            <p><strong>Aktyorlar:</strong> Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+            <p><strong>Reyting:</strong> ⭐ 8.6/10 (IMDb)</p>
+          </div>
+          <div class="movie-description">
+            <h3>Hikoya</h3>
+            <p>Yaqin kelajakda Yer sharida hosildorlik pasayib ketgan. Insonga kelajak qurish uchun kosmik sayohat qilish kerak bo'ladi. Kooper, o'z qizi va bolasi bilan birga kosmosga jo'nab ketadi.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-player">
+        <h2>Ko'rish</h2>
+        
+        <!-- Sifatni tanlash -->
+        <div class="quality-selector">
+          <label for="quality">Video sifati:</label>
+          <select id="quality" onchange="changeQuality(this.value)">
+            <option value="480p">480p (Tez yuklanadi)</option>
+            <option value="720p" selected>720p (HD - Tavsiya etiladi)</option>
+            <option value="1080p">1080p (Full HD)</option>
+          </select>
+        </div>
+        
+        <div class="video-container">
+          <video id="movieVideo" width="100%" height="400" controls>
+            <source id="videoSource" src="videos/Intelstellar.mp4" type="video/mp4">
+            Brauzeringiz <a href="videos/Intelstellar.mp4">videoni yuklab oling</a>
+          </video>
+        </div>
+      </div>
+
+      <div class="related-movies">
+        <h3>O'xshash Kinolar</h3>
+        <div class="movie-grid">
+          <div class="movie-card">
+            <img src="img/inception.jpg" alt="Inception">
+            <h3>Inception</h3>
+            <p>2010 | Triller</p>
+          </div>
+          <a href="gravity.html" class="movie-card-link">
+            <div class="movie-card">
+              <img src="img/gravity.jpg" alt="Gravity">
+              <h3>Gravity</h3>
+              <p>2013 | Ilmiy fantastika</p>
+            </div>
+          </a>
+          <div class="movie-card">
+            <img src="img/martian.jpg" alt="The Martian">
+            <h3>The Martian</h3>
+            <p>2015 | Ilmiy fantastika</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KinoWorld. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
